@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Sidebar } from "@/components/Sidebar/sidebar"
-import { ProfileModal } from "@/components/ProfileModal/profile-modal"
+import { FullViewModal } from "@/components/FullViewModal/FullViewModal"
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState("home")
   const [modalStack, setModalStack] = useState([])
   const [showText, setShowText] = useState(false)
-  const [isClosing, setIsClosing] = useState(false); // Add isClosing state
-  const [closingSection, setClosingSection] = useState(null); // Add closingSection state
+  const [isClosing, setIsClosing] = useState(false); 
+  const [closingSection, setClosingSection] = useState(null);
 
   useEffect(() => {
     setShowText(true)
@@ -29,14 +29,14 @@ export default function Page() {
   const handleClose = () => {
     if (modalStack.length > 0) {
       setIsClosing(true);
-      setClosingSection(modalStack[modalStack.length - 1]); // Set the closing section
+      setClosingSection(modalStack[modalStack.length - 1]); 
       setTimeout(() => {
         const newStack = modalStack.slice(0, -1);
         setModalStack(newStack);
         setActiveSection(newStack.length > 0 ? newStack[newStack.length - 1] : "home");
         setIsClosing(false);
-        setClosingSection(null); // Reset the closing section
-      }, 500); // Match animation duration
+        setClosingSection(null); 
+      }, 500); 
     }
   }
 
@@ -71,12 +71,12 @@ export default function Page() {
         </div>
 
         {modalStack.map((section, index) => (
-          <ProfileModal
+          <FullViewModal
             key={`${section}-${index}`}
             activeSection={section}
             onSectionChange={handleSectionChange}
             onClose={handleClose}
-            isClosing={isClosing && closingSection === section} // Conditional isClosing based on closingSection
+            isClosing={isClosing && closingSection === section} 
           />
         ))}
       </main>
