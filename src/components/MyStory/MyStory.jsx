@@ -56,7 +56,7 @@ const MyStory = () => {
   ];
 
   return (
-    <div>
+    <div className="font-proxima">
       <div className="w-full">
         <Image
           height={2000}

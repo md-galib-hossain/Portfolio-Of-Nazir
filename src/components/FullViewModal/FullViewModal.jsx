@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Sidebar } from "../Sidebar/sidebar";
 import ProfileContent from "../ProfileContent/ProfileContent";
 import MyStory from "../MyStory/MyStory";
+import Legacy from "../Legacy/Legacy";
 
 export function FullViewModal({
   activeSection,
@@ -45,7 +46,7 @@ function SectionContent({ section }) {
     case "my-story":
       return <MyStory></MyStory>;
     case "legacy":
-      return <h1 className="text-4xl font-bold text-white">Legacy</h1>;
+      return <Legacy></Legacy>;
     case "press":
       return <h1 className="text-4xl font-bold text-white">Press</h1>;
     case "videos":
