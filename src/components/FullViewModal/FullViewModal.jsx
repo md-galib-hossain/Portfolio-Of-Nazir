@@ -2,19 +2,24 @@
 import { motion } from "framer-motion";
 import { Sidebar } from "../Sidebar/sidebar";
 import ProfileContent from "../ProfileContent/ProfileContent";
+import MyStory from "../MyStory/MyStory";
 
-
-export function FullViewModal({ activeSection, onSectionChange, onClose, isClosing }) {
-  console.log({isClosing})
+export function FullViewModal({
+  activeSection,
+  onSectionChange,
+  onClose,
+  isClosing,
+}) {
+  console.log({ isClosing });
   return (
     <motion.div
-      initial={isClosing ? { x: "100%" }:{ x: "-100%" }}
-      animate={ { x: 0 }}
+      initial={isClosing ? { x: "100%" } : { x: "-100%" }}
+      animate={{ x: 0 }}
       transition={{
         type: "spring",
-        stiffness: 80, 
-        damping: 20, 
-        duration: 0.7, 
+        stiffness: 80,
+        damping: 20,
+        duration: 0.7,
       }}
       className="fixed inset-y-0 left-0 right-0 z-50 flex"
     >
@@ -36,11 +41,9 @@ export function FullViewModal({ activeSection, onSectionChange, onClose, isClosi
 function SectionContent({ section }) {
   switch (section) {
     case "profile":
-      return (
-     <ProfileContent></ProfileContent>
-      );
+      return <ProfileContent></ProfileContent>;
     case "my-story":
-      return <h1 className="text-4xl font-bold text-white">My Story</h1>;
+      return <MyStory></MyStory>;
     case "legacy":
       return <h1 className="text-4xl font-bold text-white">Legacy</h1>;
     case "press":
