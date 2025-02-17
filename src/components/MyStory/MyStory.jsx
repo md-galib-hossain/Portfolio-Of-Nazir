@@ -27,7 +27,7 @@ const MyStory = () => {
   ];
 
   const channelGrid = [
-      { src: "/channels/channel-3.png", precedence: 3 },
+    { src: "/channels/channel-3.png", precedence: 3 },
     { src: "/channels/channel-1.png", precedence: 1 },
     { src: "/channels/channel-2.png", precedence: 2 },
     { src: "/channels/channel-4.png", precedence: 4 },
@@ -53,7 +53,6 @@ const MyStory = () => {
     { src: "/channels/channel-6.png", precedence: 6 },
     { src: "/channels/channel-6.png", precedence: 6 },
     { src: "/channels/channel-6.png", precedence: 6 },
-  
   ];
 
   return (
@@ -127,6 +126,21 @@ const MyStory = () => {
         </div>
       </div>
       {/* 3rd section end */}
+      {/* 4th section start*/}
+      <div className="mt-12">
+        <Title text="Awards" />
+        <div className="relative w-full pt-[56.25%]">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full rounded-md"
+            src="https://www.youtube.com/embed/K87aFjB7Ff0"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+      {/* 4th section end*/}
     </div>
   );
 };
