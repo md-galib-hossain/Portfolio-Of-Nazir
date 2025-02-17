@@ -5,6 +5,7 @@ import ProfileContent from "../ProfileContent/ProfileContent";
 import MyStory from "../MyStory/MyStory";
 import Legacy from "../Legacy/Legacy";
 import Press from "../Press/Press";
+import Videos from "../Videos/Videos";
 
 export function FullViewModal({
   activeSection,
@@ -51,7 +52,7 @@ function SectionContent({ section }) {
     case "press":
       return <Press></Press>;
     case "videos":
-      return <h1 className="text-4xl font-bold text-white">Videos</h1>;
+      return <Videos/>;
     case "projects":
       return <h1 className="text-4xl font-bold text-white">Projects</h1>;
     case "contact":
